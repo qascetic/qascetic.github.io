@@ -78,7 +78,7 @@ function startWebRTC(isOfferer) {
 
   navigator.mediaDevices.getUserMedia({
     audio: true,
-    video: true,
+    video: { facingMode: { exact: "environment" } },
   }).then(stream => {
     // Display your local video in #localVideo element
     localVideo.srcObject = stream;
